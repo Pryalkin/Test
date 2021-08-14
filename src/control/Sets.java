@@ -7,6 +7,8 @@ public class Sets {
     private String name;
     private int powerSet;
     private int [] set;
+    private boolean q = false;
+    private boolean u = false;
 
     Sets (int powerSet){
         this.powerSet = powerSet*2;
@@ -16,11 +18,29 @@ public class Sets {
         this.name = name.toUpperCase();
         this.powerSet = powerSet*2;
         this.set = new int [powerSet*2];
+        u = true;
     }
 
     public void setName(String name) {
         this.name = name.toUpperCase();
-        this.set = new int[powerSet];
+        this.set = new int[powerSet*2];
+        u = true;
+    }
+
+    public void setQ(boolean q) {
+        this.q = q;
+    }
+
+    public boolean getQ() {
+        return q;
+    }
+
+    public void setU(boolean u) {
+        this.u = u;
+    }
+
+    public boolean getU() {
+        return u;
     }
 
     public void fillingTheSet(){
@@ -43,6 +63,7 @@ public class Sets {
                 set[i] = a;
             }
             System.out.println("Операции присваевания прошли успешно");
+            q = true;
         }
     }
 
@@ -105,9 +126,9 @@ public class Sets {
                 if (set[i] == value) a = set[i];
             }
             if (a == value)
-                System.out.println("Значанеи " + value + " принадлежит множеству");
+                System.out.println("Значение " + value + " принадлежит множеству");
             else
-                System.out.println("Значанеи " + value + " не принадлежит множеству");
+                System.out.println("Значение " + value + " не принадлежит множеству");
         }
     }
 }
